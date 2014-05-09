@@ -1,0 +1,133 @@
+@import "compass/css3/border-radius";
+@import "_media";
+
+/* ---------->>> COLORS <<<-----------*/
+
+$green: #007935; // Main Green
+$grey: #7b7b7b; // Borders
+$white: #fff; // Primary White
+
+/* ---------->>> TYPOGRAPHY <<<-----------*/
+
+$family: webfont, Georgia, Times, "Times New Roman", serif;
+$familyLight: webfont_light, Georgia, Times, "Times New Roman", serif;
+
+body {
+	font-family: $family;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	color: $green;
+	font-size: emCalc(48);
+	font-family: $family;
+	font-weight: normal;
+	margin-bottom: 50px;
+}
+h2 {
+	color: $grey;
+	font-size: emCalc(24);
+	font-family: $familyLight;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+}
+h3 {
+	color: $green;
+	font-size: emCalc(36);
+
+	span {
+		display: block;
+		font-size: emCalc(14);
+		margin-top: 10px;
+	}
+}
+
+/* ---------->>> COMPONENTS <<<-----------*/
+
+.btn {
+	background-color: $green;
+	color: $white;
+	padding: 6px 24px;
+	text-decoration: none;
+	@include border-radius(5px); 
+	font-size: emCalc(16);
+	line-height: 16px;
+	border: none;
+	font-family: $familyLight;
+}
+
+.border {
+	border:1px solid $grey;
+}
+
+/* ---------->>> GLOBAL <<<-----------*/
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+	margin:0; padding: 0;
+}
+
+/* ---------->>> FORM <<<-----------*/
+.cart {
+	position: relative;
+	form {
+		position: absolute;
+		right: 15px;
+		bottom: 75px;
+		input {
+			display: none;
+		}
+	}
+}
+
+/* ---------->>> MAIN <<<-----------*/
+
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	h2 {
+		border-bottom: 1px solid $grey;
+	}
+	.container {
+		padding: 10px;
+	}
+	.select-tee {
+		li {
+			margin: 0 10px 20px 0;
+			display: block;
+			width: 218px;
+			height: 168px;
+			&:hover, &.active {
+				@extend .border;
+			}
+			a {
+				display: inline-block;
+				img {
+					&:hover {
+						
+					}
+				}
+			}
+		}
+	}
+	.product {
+		img {
+			margin-bottom: 50px;
+		}
+		margin-bottom: 50px;
+	}
+	.details {
+		@include clearfix();
+		h3 {
+			display: inline-block;
+		}
+	}
+
+}
